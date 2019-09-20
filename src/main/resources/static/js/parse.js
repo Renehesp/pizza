@@ -50,6 +50,8 @@ function getFraction(qty){
     switch (qty) {
         case 3:
             return "Um ter&ccedil;o";
+        case 4:
+            return "Meia";
         case 6:
             return "Dois ter&ccedil;os";
         default:

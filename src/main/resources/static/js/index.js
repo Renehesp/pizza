@@ -20,9 +20,8 @@ function calcula() {
 function addSabores() {
     jQuery.support.cors = true;
     var sabor = $('#sabor').val();
-
+    var quantidade = $('#quantidade').val();
     if(document.getElementById(sabor) == null){
-        var quantidade = $('#quantidade').val();
         $('#list').append(
             '<tr id="'+sabor+'">' +
             '<td>' +
@@ -30,13 +29,15 @@ function addSabores() {
 
             '</td> ' +
             '<td>' +
-            '<div contenteditable="true">'+quantidade+'</div>' +
+            '<div id="'+sabor+'_qty" contenteditable="true">'+quantidade+'</div>' +
             '</td>' +
             '<td>' +
             '<button type="button" onclick="deleteRow(this)">Remover</button>' +
             '</td>' +
             '</tr>');
-
+    } else {
+        var id = '#'+sabor+'_qty';
+        $(id)[0].innerHTML = parseInt($(id)[0].innerHTML) + parseInt(quantidade);
     }
 }
 function deleteRow(o) {
