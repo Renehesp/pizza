@@ -35,7 +35,7 @@ public enum Sabor {
     FLORENCA("florença"),
     FORNEIRO("forneiro"),
     FRANGO_CAIPIRA("frango_caipira"),
-    FRANG_COM_CATUPIRY("frango_com_catupiry"),
+    FRANGO_COM_CATUPIRY("frango_com_catupiry"),
     GRATINADA("gratinada"),
     JARDINEIRA("jardineira"),
     LIGHT("light"),
