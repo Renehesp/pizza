@@ -20,24 +20,24 @@ function calcula() {
 function addSabores() {
     jQuery.support.cors = true;
     var sabor = $('#sabor').val();
-    var id = sabor.replace(new RegExp(" ", 'g'), "_")+'_qty';
     var quantidade = $('#quantidade').val();
     if(document.getElementById(sabor) == null){
         $('#list').append(
             '<tr id="'+sabor+'">' +
             '<td>' +
-            '<div>'+sabor+'</div>' +
+            '<div>'+sabor.replace(new RegExp("_", 'g'), " ")+'</div>' +
 
             '</td> ' +
             '<td>' +
-            '<div id="'+id+'" contenteditable="true">'+quantidade+'</div>' +
+            '<div id="'+sabor+'_qty" contenteditable="true">'+quantidade+'</div>' +
             '</td>' +
             '<td>' +
             '<button type="button" onclick="deleteRow(this)">Remover</button>' +
             '</td>' +
             '</tr>');
     } else {
-        var value = parseInt($("'#"+id+"'")[0].innerHTML) + parseInt(quantidade);
+        var id = '#'+sabor+'_qty';
+        var value = parseInt($(id)[0].innerHTML) + parseInt(quantidade);
         if(value>100) value = 100;
         $(id)[0].innerHTML = value;
     }
@@ -54,7 +54,7 @@ function load(){
         type:'GET',
         success: function( json ) {
             $.each(json, function(i, value) {
-                $('#sabor').append($('<option>').text(value).attr('value', value.toString().replace(new RegExp(" ", 'g'), "_")));
+                $('#sabor').append($('<option>').text(value.toString().replace(new RegExp("_", 'g'), " ")).attr('value', value));
             });
         }
     });
