@@ -20,7 +20,7 @@ function calcula() {
 function addSabores() {
     jQuery.support.cors = true;
     var sabor = $('#sabor').val();
-    var id = '#'+sabor.replace(new RegExp(" ", 'g'), "_")+'_qty';
+    var id = sabor.replace(new RegExp(" ", 'g'), "_")+'_qty';
     var quantidade = $('#quantidade').val();
     if(document.getElementById(sabor) == null){
         $('#list').append(
@@ -37,7 +37,7 @@ function addSabores() {
             '</td>' +
             '</tr>');
     } else {
-        var value = parseInt($(id)[0].innerHTML) + parseInt(quantidade);
+        var value = parseInt($("'#"+id+"'")[0].innerHTML) + parseInt(quantidade);
         if(value>100) value = 100;
         $(id)[0].innerHTML = value;
     }
