@@ -1,15 +1,75 @@
 package pizza.helper.domain;
 
 public enum Sabor {
-    MUSSARELA("mussarela"),
-    CALABRESA("calabresa"),
-    PORTUGUESA("portuguesa"),
-    MARGUERITA("marguerita"),
-    FRANGO("frango"),
-    PALMITO("palmito"),
-    QUATRO_QUEIJOS("quatro_queijos"),
-    DOIS_QUEIJOS("dois_queijos"),
-    PEITO_DE_PERU("peito_de_peru")
+    ABOBRINHA("Abobrinha"),
+    ABOBRINHAII("Abobrinhaii"),
+    ALCACHOFRA_ESPECIAL("Alcachofra Especial"),
+    ALEMA("Alemã"),
+    ALICHE("Aliche"),
+    AMERICANA("Americana"),
+    A_MODA_DO_CHEFE("A Moda do Chefe"),
+    ATUM("Atum"),
+    ATUM_COM_MUSSARELA_OU_CATUPIRY("Atum com Mussarela ou Catupiry"),
+    ATUM_SOLIDO("Atum Sólido"),
+    BACON_COM_MUSSARELA_OU_CATUPIRY("Bacon com Mussarela ou Catupiry"),
+    BAINANA("Baiana"),
+    BAIANA_ESPECIAL("Baiana Especial"),
+    BARI("Bari"),
+    BERINJELA("Berinjela"),
+    BROCOLIS("Brócolis"),
+    CALABRESA("Calabresa"),
+    CALABRESA_COM_BACON("Calabresa com Bacon"),
+    CALABRESA_COM_MUSSARELA_OU_CATUPIRY("Calabresa com Mussarela ou Catupiry"),
+    CAMARAO("Camarão"),
+    CANADENSE("Canadense"),
+    CARNE_SECA("Carne Seca"),
+    CATUPIRY("Catupiry"),
+    CINCO_QUEIJOS("Cinco Queijos"),
+    DA_HORA("Da Hora"),
+    DA_MAMA("Da Mama"),
+    DELICIA("Delícia"),
+    DO_PAPA("Do Papa"),
+    DOIS_QUEIJOS("Dois_Queijos"),
+    ESCAROLA("Escarola"),
+    EXPRESSO("Expresso"),
+    FLORENCA("Florença"),
+    FORNEIRO("Forneiro"),
+    FRANGO_CAIPIRA("Frango Caipira"),
+    FRANG_COM_CATUPIRY("Frango com Catupiry"),
+    GRATINADA("Gratinada"),
+    JARDINEIRA("Jardineira"),
+    LIGHT("Light"),
+    LOMBO_COM_CATUPIRY_OU_MUSSARELA("Lombo com Catupiry ou Mussarela"),
+    MAFIOSA("Mafiosa"),
+    MARGUERITA("Marguerita"),
+    MARTINI("Martini"),
+    MILHO_VERDE("Milho Verde"),
+    MODA_DA_CASA("Moda da Casa"),
+    MUSSARELA("Mussarela"),
+    NAPOLITANA("Napolitana"),
+    NOSTRA_PIZZA("Nostra Pizza"),
+    PALMITO("Palmito"),
+    PAULISTA("Paulista"),
+    PEITO_DE_PERU_COM_CATUPIRY("Peito de Peru com Catupiry"),
+    PEPERONI("Peperoni"),
+    PERUANA("Peruana"),
+    PHILADELPHIA("Philadelphia"),
+    PIZZAIOLO("Pizzaiolo"),
+    PLATAFORMA("Plataforma"),
+    PORTUGUESA("Portuguesa"),
+    PRIMADORA("Primadora"),
+    QUATRO_QUEIJOS("Quatro_Queijos"),
+    ROMANA("Romana"),
+    RUCULA("Rúcula"),
+    SABOR("Sabor"),
+    SALAME("Salame"),
+    SICILIANA("Siciliana"),
+    SIENA("Siena"),
+    SUPREMA("Suprema"),
+    TOSCANA("Toscana"),
+    TROPICAL("Tropical"),
+    VATICANO("Vaticano"),
+    VEGETARIANA("Vegetariana")
     ;
     public String sabor;
 
@@ -19,14 +79,5 @@ public enum Sabor {
 
     Sabor(String value) {
         this.sabor = value;
-    }
-
-    public static Sabor fromValue(String name){
-        for(Sabor sabor :Sabor.values()){
-            if(sabor.getSabor().equals(name)){
-                return sabor;
-            }
-        }
-        return null;
     }
 }

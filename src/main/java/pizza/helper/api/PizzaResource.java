@@ -18,7 +18,7 @@ public class PizzaResource {
 
     @GetMapping("/sabores")
     public List<String> getSabores(){
-        return Arrays.stream(Sabor.values()).map(Sabor::name).collect(Collectors.toList());
+        return Arrays.stream(Sabor.values()).map(Sabor::getSabor).collect(Collectors.toList());
     }
 
     @PostMapping("/calcula")
