@@ -54,7 +54,7 @@ function load(){
         type:'GET',
         success: function( json ) {
             $.each(json, function(i, value) {
-                $('#sabor').append($('<option>').text(value.toString().replace(new RegExp("_", 'g'), " ")).attr('value', value));
+                $('#sabor').append($('<option>').text(value).attr('value', value.toString().replace(new RegExp(" ", 'g'), "_")));
             });
         }
     });
