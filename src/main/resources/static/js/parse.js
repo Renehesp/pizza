@@ -20,8 +20,8 @@ function parseResponse(pizzas, incompleta){
     $('#pedido')
         .append('<h2>Pedido:</h2><br>')
         
-    if(pizzas != null){
-        $('#pedido').append('Pizzas:<br>')
+    if(pizzas != null && pizzas.length > 0){
+        $('#pedido').append('Pizzas Completas:<br>')
         .append('<ul id="resposta"> </ul>');
         var i = 1;
         for(pizza in pizzas){

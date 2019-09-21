@@ -58,11 +58,8 @@ function load(){
             });
         }
     });
-    $(function(){
-        var $select = $("#quantidade");
-        for (i=1;i<=100;i++){
-            $select.append($('<option></option>').val(i).html(i))
-        }
-    });​
-
+    var $select = $("#quantidade");
+    for (i=1;i<=100;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
 }
