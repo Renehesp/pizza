@@ -19,20 +19,22 @@ function parseResponse(pizzas, incompleta){
     $('#pedido')[0].innerHTML = '';
     $('#pedido')
         .append('<h2>Pedido:</h2><br>')
-        .append('Pizzas:<br>')
+        
+    if(pizzas != null){
+        $('#pedido').append('Pizzas:<br>')
         .append('<ul id="resposta"> </ul>');
-    var i = 1;
-    for(pizza in pizzas){
-        var json = pizzas[pizza].sabores;
-        var map = new Map(Object.entries(json));
-        $('#resposta').append('<h3>Pizza '+ i++ +':</h3>');
-        map.forEach(adicionaPizza);
+        var i = 1;
+        for(pizza in pizzas){
+            var json = pizzas[pizza].sabores;
+            var map = new Map(Object.entries(json));
+            $('#resposta').append('<h3>Pizza '+ i++ +':</h3>');
+            map.forEach(adicionaPizza);
+        }
     }
 
-    $('#pedido').append('Pizza Incompleta:<br>')
-        .append('<ul id="incompleta"> </ul>');
-
     if(incompleta !== null){
+        $('#pedido').append('Pizza Incompleta:<br>')
+        .append('<ul id="incompleta"> </ul>');
         var map2 = new Map(Object.entries(incompleta.sabores));
         map2.forEach(adicionaIncompleta);
     }

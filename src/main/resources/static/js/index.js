@@ -37,7 +37,9 @@ function addSabores() {
             '</tr>');
     } else {
         var id = '#'+sabor+'_qty';
-        $(id)[0].innerHTML = parseInt($(id)[0].innerHTML) + parseInt(quantidade);
+        var value = parseInt($(id)[0].innerHTML) + parseInt(quantidade);
+        if(value>100) value = 100;
+        $(id)[0].innerHTML = value;
     }
 }
 function deleteRow(o) {
@@ -56,5 +58,11 @@ function load(){
             });
         }
     });
+    $(function(){
+        var $select = $("#quantidade");
+        for (i=1;i<=100;i++){
+            $select.append($('<option></option>').val(i).html(i))
+        }
+    });​
 
 }

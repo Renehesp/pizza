@@ -25,7 +25,7 @@ public class PizzaManagementService {
 
     private void processaRequest(List<Pedaco> pedacos) {
         pedacos.forEach(request -> {
-            while (request.getQuantidade() > 7){
+            while (request.getQuantidade() >= 7){
                 PIZZAS.add(new Pizza(request.getSabor()));
                 request.setQuantidade(request.getQuantidade() - 8);
             }
